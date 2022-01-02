@@ -13,10 +13,10 @@ link-citations: true
 biblio-style: apalike
 description: This is a minimal example of using the bookdown package to write a book.
   The output format for this example is bookdown::gitbook.
-favicon: favicon.png
-cover-image: https://vetstreet.brightspotcdn.com/dims4/default/630978f/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Fe0%2F88adb0c81f11e09b940050568d6ceb%2Ffile%2FLurcher-3-AP-645km081611.jpg
-github-repo: chris-gaskell/tertiary-psychotherapy
-url: https://tertiary-psychotherapy.netlify.app
+favicon: "images/favicon.ico"
+cover-image: "https://vetstreet.brightspotcdn.com/dims4/default/630978f/2147483647/crop/0x0%2B0%2B0/resize/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2Fe0%2F88adb0c81f11e09b940050568d6ceb%2Ffile%2FLurcher-3-AP-645km081611.jpg"
+github-repo: "chris-gaskell/tertiary-psychotherapy"
+url: "https://tertiary-psychotherapy.netlify.app"
 ---
 
 # About
