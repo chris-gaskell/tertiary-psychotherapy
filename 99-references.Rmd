@@ -1,0 +1,105 @@
+\addtocontents{toc}{\protect\newpage}
+
+
+# Appendix {-}
+
+## Appendix A. The Outcome-Questionnaire 45 [@Lambert2004]. {-}
+\includepdf[pages={1}]{Input/OQ45.pdf}
+
+## Appendix B. Documents of approval for the current project. Included here are key pages indicating approval. {-}
+
+1. Preliminary research ethics committee approval (REC) and subsequent full REC (two pages).
+2. Health Research Authority (HRA) approval (two pages).
+3. Approval for section 5 of the health service (Control  of  Patient  Information) Regulations  2002 (’section  251  support’) to process confidential patient information without patient consent (four pages).
+4. University scientific approval (one page).
+5. Research sponsor letter from University (two pages).
+6. Local research approval from the host NHS trust (one page).
+
+\includepdf[pages={1-2}]{Input/REC.pdf}
+\includepdf[pages={1-2}]{Input/HRA_approval.pdf}
+\includepdf[pages={1-4}]{Input/CAG.pdf}
+\includepdf[pages={1}]{Input/ScieApprov.pdf}
+\includepdf[pages={1-2}]{Input/ResSpons.pdf}
+\includepdf[pages={27}]{Input/SHSCapproval.pdf}
+
+\newpage
+
+## Appendix C. Opt-out poster for patients attending the specialist psychotherapy service. Poster advised and approved by CAG. {-}
+
+\includepdf[pages={1}]{Input/OQ_OptOut_Poster.pdf}
+
+\newpage
+
+## Appendix D. Further details regarding study analyses. {-}
+
+### Meta-analytic benchmark
+Benchmarks were calculated for the total OQ-45 score, as well as each of the subscales. Effect-sizes (including 95% confidence intervals [CI]) for SPS (total sample and each therapy modality separately) and the described benchmarks were plotted to a forest-plot for visual comparison. Inspection of confidence interval overlap was performed to enable pairwise comparisons of effectiveness equivalence between SPS and available benchmarks. Three equivalence categories were employed:
+(i) *equivalent effectiveness* was when the benchmark effect-size was contained by SPS CIs; (ii) *superior effectiveness* was when the SPS CI region exceeded the SPS effect-size; finally, (iii) *inferior effectiveness* was when the SPS CI region fell beneath the SPS effect-size.
+
+### Maximum likelihood estimation
+All models developed in this study used maximum likelihood estimation in order to allow for the more conservative assumption that data missingness represents data missing at random [MAR, @Mallinckrodt2001] as opposed to data being missing completely at random (MCAR).
+
+### Power calculation {.unnumbered}
+There is no definitive rule for the number of (or ratio of) observations:cases required to fit growth curve models. Sample size ratios which have been suggested [e.g. @Raudenbush2002] tend to represent more traditional hierarchical linear models (i.e. not longitudinal) which generally have fewer level-1 observations per level-2 group [@Kwok2008].
+@Maas2005 suggest that 30 level-2 units (cases) are sufficient for reasonably unbiased regression estimates however this does not specify the number of level-1 observations. The only consensus for power calculation in growth curves analysis is that ‘more is better.’ Studies applying growth curve techniques to psychological therapy longitudinal data have used as few as 13 level-2 units [i.e. patients, @Kolly2015].
+We specified a-priori that 150 cases (i.e. level-2) with at least three observations each would be sufficient for the current study.
+
+
+
+## Appendix E. Comparison of  of different covariance structures. {-}
+
+```{r covar, echo=F}
+covar.table.1
+covar.table.2
+```
+
+\newpage
+
+## Appendix F. Comparison of dfferent time trends. {-}
+
+
+```{r timeform, echo=F}
+Form.Table.1
+Form.Table.2
+```
+
+\newpage
+
+\begin{landscape}
+\addcontentsline{toc}{section}{Appendix F. Comparison of unconditional models}
+\textbf{Appendix G. Comparison of unconditional models}
+
+```{r growth, echo = FALSE, include=T}
+Uncond.Table
+```
+
+\newpage
+\addcontentsline{toc}{section}{Appendix G. Study charachteritics for OQ-45 outcomes studies included in the random effects meta-analytic benchmark}
+\textbf{Appendix H. Study charachteritics for OQ-45 outcomes studies included in the random effects meta-analytic benchmark}
+
+\onehalfspacing
+```{r Bench.Study.Table, echo=F, include=T, fig.pos="h"}
+Bench.Study.Table
+```
+\doublespacing
+
+\end{landscape}
+
+\newpage
+
+
+
+
+## Appendix I. Growth curve plots for conditional modles (i.e. treatment modality). {-}
+```{r growthcurve2, echo = FALSE, include=T, fig.height=6.5, fig.cap="Growth curves for conditional models, seperated by treatment modality. Coloured lines represent growth curves. Grey shaded regions represent 95% confidence intervals. Trends line types represent (i) cubic for total score, interpersonal and symptom distress; and (ii) log-linear for social role.", fig.pos = 'H'}
+growplots2
+```
+
+\noindent
+\vspace{-2em}
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0in}
+\setlength{\parskip}{15pt}
+
+
+# References {-}

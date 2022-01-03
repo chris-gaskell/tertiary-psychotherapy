@@ -1,0 +1,952 @@
+[
+	{
+		"id": "Barkham2010",
+		"type": "chapter",
+		"abstract": "The paradigm of evidence-based practice is now shaping the format and delivery of the psychological therapies. In the current chapter, we reflect on the assumptions underlying evidence-based practice and consider the benefits of broadening this paradigm to include a wider constituency of evidence, particularly in relation to what we call practice-based evidence. Our aim is to argue that although trials methodology has contributed much to the evidence base on effective treatments, questions remain concerning the underlying assumptions of evidence-based practice. Our proposition is that there is an alternative, broader foundation for deciding the relevance of research to practice that, combined with trials methodology, can yield a more robust knowledge base for practitioners and services. We first set out a vision of a broader research perspective as documented in several key strategic texts. Second, we consider the randomized controlled trial (RCT) together with a range of design and methodological issues associated with it. Third, we present a résumé of practice-based research together with its virtues and vulnerabilities. And finally, we suggest models for bringing together, in differing ways, the strengths of trials methodology and practice-based studies. (PsycINFO Database Record (c) 2019 APA, all rights reserved)",
+		"container-title": "Developing and delivering practice-based evidence: A guide for the psychological therapies",
+		"ISBN": "978-0-470-03235-0",
+		"note": "DOI: 10.1002/9780470687994.ch2",
+		"page": "21-61",
+		"publisher": "Wiley-Blackwell",
+		"source": "APA PsycNET",
+		"title": "Building a rigorous and relevant knowledge base for the psychological therapies",
+		"author": [
+			{
+				"family": "Barkham",
+				"given": "Michael"
+			},
+			{
+				"family": "Stiles",
+				"given": "William B."
+			},
+			{
+				"family": "Lambert",
+				"given": "Michael J."
+			},
+			{
+				"family": "Mellor-Clark",
+				"given": "John"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2010"
+				]
+			]
+		}
+	},
+	{
+		"id": "Raudenbush2002",
+		"type": "book",
+		"abstract": "Popular in the First Edition for its rich, illustrative examples and lucid explanations of the theory and use of hierarchical linear models (HLM), the book has been reorganized into four parts with four completely new chapters. The first two parts, Part I on \"The Logic of Hierarchical Linear Modeling\" and Part II on \"Basic Applications\" closely parallel the first nine chapters of the previous edition with significant expansions and technical clarifications, such as:  * An intuitive introductory summary of the basic procedures for estimation and inference used with HLM models that only requires a minimal level of mathematical sophistication in Chapter 3* New section on multivariate growth models in Chapter 6 * A discussion of research synthesis or meta-analysis applications in Chapter 7* Data analytic advice on centering of level-1 predictors and new material on plausible value intervals and robust standard estimators",
+		"ISBN": "978-0-7619-1904-9",
+		"language": "en",
+		"note": "Google-Books-ID: uyCV0CNGDLQC",
+		"number-of-pages": "520",
+		"publisher": "SAGE",
+		"source": "Google Books",
+		"title": "Hierarchical Linear Models: Applications and Data Analysis Methods",
+		"title-short": "Hierarchical Linear Models",
+		"author": [
+			{
+				"family": "Raudenbush",
+				"given": "Stephen W."
+			},
+			{
+				"family": "Bryk",
+				"given": "Anthony S."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2002"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/7296462/items/EDJQRZWD",
+		"type": "article",
+		"title": "DOH2014.pdf"
+	},
+	{
+		"id": "Douglas2016a",
+		"type": "article-journal",
+		"container-title": "Psychoanalytic Psychotherapy",
+		"DOI": "10.1080/02668734.2016.1198415",
+		"ISSN": "0266-8734, 1474-9734",
+		"issue": "3",
+		"journalAbbreviation": "Psychoanalytic Psychotherapy",
+		"language": "en",
+		"page": "223-239",
+		"source": "DOI.org (Crossref)",
+		"title": "Dynamic interpersonal therapy in an NHS tertiary level specialist psychotherapy service",
+		"URL": "https://www.tandfonline.com/doi/full/10.1080/02668734.2016.1198415",
+		"volume": "30",
+		"author": [
+			{
+				"family": "Douglas",
+				"given": "Angela"
+			},
+			{
+				"family": "Ablett-Tate",
+				"given": "Nicky"
+			},
+			{
+				"family": "Chadd",
+				"given": "Nicola"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					7,
+					2
+				]
+			]
+		}
+	},
+	{
+		"id": "Firth2019",
+		"type": "article-journal",
+		"abstract": "Objective: The study aimed to 1) investigate the effect of treatment location on clinical outcomes for patients receiving psychological therapy (a clinic effect, akin to the concept of a therapist effect), and 2) assess the impact of explanatory individual and aggregate demographic and process variables on the clinic and therapist effects.\nMethod: The sample comprised 26,888 patients, seen by 462 therapists, across 30 clinics. Mean patient age was 38 years (69% female, 90% White, 92% planned ending). The dependent variable was patients’ post-therapy score on the Clinical Outcomes in Routine Evaluation – Outcome Measure. An incremental three-level multilevel model was constructed. Markov Chain Monte Carlo estimation created 95% probability intervals for the clinic and therapist effects.\nResults: A three-level model with no explanatory variables detected a clinic effect of 8.2%, significantly larger than the therapist effect of 3.2%. Adding explanatory variables significantly reduced the clinic effect to 1.9% but did not significantly alter the therapist effect (3.4%). Patient-level symptom severity and employment status, and clinic-level percentage of White patients and healthcare sector explained the most clinic outcome variance and overall outcome variance.\nConclusions: Substantial variability in clinical outcomes was found between clinics providing psychological therapy. Socioeconomic mix of patients explained significant proportions of variability at the clinic level but not the therapist level. Clinical implications include the need to go beyond the therapist-patient interaction in order to deliver effective psychological therapy. Future research is also needed to identify the mechanisms by which clinic and/or area-level factors impact on clinical outcomes.",
+		"container-title": "Journal of Consulting and Clinical Psychology",
+		"DOI": "10.1037/ccp0000388",
+		"ISSN": "1939-2117, 0022-006X",
+		"issue": "4",
+		"journalAbbreviation": "Journal of Consulting and Clinical Psychology",
+		"language": "en",
+		"page": "345-356",
+		"source": "DOI.org (Crossref)",
+		"title": "Therapist and clinic effects in psychotherapy: A three-level model of outcome variability.",
+		"title-short": "Therapist and clinic effects in psychotherapy",
+		"URL": "http://doi.apa.org/getdoi.cfm?doi=10.1037/ccp0000388",
+		"volume": "87",
+		"author": [
+			{
+				"family": "Firth",
+				"given": "Nick"
+			},
+			{
+				"family": "Saxon",
+				"given": "David"
+			},
+			{
+				"family": "Stiles",
+				"given": "William B."
+			},
+			{
+				"family": "Barkham",
+				"given": "Michael"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "Gumz2010",
+		"type": "article-journal",
+		"abstract": "The authors developed a concept that applies self-organization theory to psychodynamic principles. According to this concept, episodes of temporary destabilization represent a precondition for abrupt changes within the therapeutic process. The authors examined six courses of therapy (patients diagnosed with depression and personality disorder). After each therapy session, patients rated their experience of the therapeutic interaction. A measure of instability was used to identify episodes of destabilization with respect to patients' interaction experience throughout the process. Episodes of pronounced destabilization occurred in the four courses of therapy that showed better therapy outcomes. These episodes were characterized by temporary strong deteriorations in interaction experience (negative peaks). Three of the four courses showed subsequent discontinuous improvements to a higher level of interaction. Results indicate that the systematic inclusion of a measure of instability is worthwhile in investigations of discontinuous changes. This method allows the theoretical assumptions of the psychodynamic approach to be tested.",
+		"container-title": "Psychotherapy Research",
+		"DOI": "10.1080/10503300903551021",
+		"ISSN": "1050-3307",
+		"issue": "4",
+		"note": "publisher: Routledge\n_eprint: https://doi.org/10.1080/10503300903551021",
+		"page": "398-412",
+		"source": "Taylor and Francis+NEJM",
+		"title": "Instability and discontinuous change in the experience of therapeutic interaction: An extended single-case study of psychodynamic therapy processes",
+		"title-short": "Instability and discontinuous change in the experience of therapeutic interaction",
+		"URL": "https://doi.org/10.1080/10503300903551021",
+		"volume": "20",
+		"author": [
+			{
+				"family": "Gumz",
+				"given": "Antje"
+			},
+			{
+				"family": "Kästner",
+				"given": "Denise"
+			},
+			{
+				"family": "Geyer",
+				"given": "Michael"
+			},
+			{
+				"family": "Wutzler",
+				"given": "Uwe"
+			},
+			{
+				"family": "Villmann",
+				"given": "Thomas"
+			},
+			{
+				"family": "Brähler",
+				"given": "Elmar"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					7,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "Jacobson1992",
+		"type": "chapter",
+		"abstract": "This reprinted article originally appeared in (Journal of Consulting and Clinical Psychology, 1991, 59[1], 12-19). (The following abstract of the original article appeared in record 1991-16094-001.) In 1984, N. S. Jacobson et al (see record 1985-00073-001) defined clinically significant change as the extent to which therapy moves someone outside the range of the dysfunctional population or within the range of the functional population. In the present article, ways of operationalizing this definition are described, and examples are used to show how clients can be categorized on the basis of this definition. A reliable change index (RC) is also proposed to determine whether the magnitude of change for a given client is statistically reliable. The inclusion of the RC leads to a twofold criterion for clinically significant change. (PsycInfo Database Record (c) 2020 APA, all rights reserved)",
+		"container-title": "Methodological issues & strategies in clinical research",
+		"event-place": "Washington, DC, US",
+		"ISBN": "978-1-55798-154-7",
+		"note": "DOI: 10.1037/10109-042",
+		"page": "631-648",
+		"publisher": "American Psychological Association",
+		"publisher-place": "Washington, DC, US",
+		"source": "APA PsycNET",
+		"title": "Clinical significance : A statistical approach to defining meaningful change in psychotherapy research",
+		"title-short": "Clinical significance",
+		"author": [
+			{
+				"family": "Jacobson",
+				"given": "Neil S."
+			},
+			{
+				"family": "Truax",
+				"given": "Paula"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1992"
+				]
+			]
+		}
+	},
+	{
+		"id": "Johns2019",
+		"type": "article-journal",
+		"abstract": "Objective\nTo review the therapist effects literature since Baldwin and Imel's (2013) review.\nMethod\nSystematic literature review of three databases (PsycINFO, PubMed and Web of Science) replicating Baldwin and Imel (2013) search terms. Weighted averages of therapist effects (TEs) were calculated, and a critical narrative review of included studies conducted.\nResults\nTwenty studies met inclusion criteria (3 RCTs; 17 practice-based) with 19 studies using multilevel modeling. TEs were found in 19 studies. The TE range for all studies was 0.2% to 29% (weighted average = 5%). For RCTs, 1%–29% (weighted average = 8.2%). For practice-based studies, 0.2–21% (weighted average = 5%). The university counseling subsample yielded a lower TE (2.4%) than in other groupings (i.e., primary care, mixed clinical settings, and specialist/focused settings). Therapist sample sizes remained lower than recommended, and few studies appeared to be designed specifically as TE studies, with too few examples of maximising the research potential of large routine patient datasets.\nConclusions\nTherapist effects are a robust phenomenon although considerable heterogeneity exists across studies. Patient severity appeared related to TE size. TEs from RCTs were highly variable. Using an overall therapist effects statistic may lack precision, and TEs might be better reported separately for specific clinical settings.",
+		"container-title": "Clinical Psychology Review",
+		"DOI": "10.1016/j.cpr.2018.08.004",
+		"ISSN": "0272-7358",
+		"journalAbbreviation": "Clinical Psychology Review",
+		"language": "en",
+		"page": "78-93",
+		"source": "ScienceDirect",
+		"title": "A systematic review of therapist effects: A critical narrative update and refinement to Baldwin and Imel's (2013) review",
+		"title-short": "A systematic review of therapist effects",
+		"URL": "http://www.sciencedirect.com/science/article/pii/S0272735817305305",
+		"volume": "67",
+		"author": [
+			{
+				"family": "Johns",
+				"given": "Robert G."
+			},
+			{
+				"family": "Barkham",
+				"given": "Michael"
+			},
+			{
+				"family": "Kellett",
+				"given": "Stephen"
+			},
+			{
+				"family": "Saxon",
+				"given": "David"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2019",
+					2,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "Kwok2008",
+		"type": "article-journal",
+		"abstract": "Objective: The use and quality of longitudinal research designs has increased over the past 2 decades, and new approaches for analyzing longitudinal data, including multilevel modeling (MLM) and latent growth modeling (LGM), have been developed. The purpose of this article is to demonstrate the use of MLM and its advantages in analyzing longitudinal data. Research Method: Data from a sample of individuals with intra-articular fractures of the lower extremity from the University of Alabama at Birmingham's Injury Control Research Center are analyzed using both SAS PROC MIXED and SPSS MIXED. Results: The authors begin their presentation with a discussion of data preparation for MLM analyses. The authors then provide example analyses of different growth models, including a simple linear growth model and a model with a time-invariant covariate, with interpretation for all the parameters in the models. Implications: More complicated growth models with different between- and within-individual covariance structures and nonlinear models are discussed. Finally, information related to MLM analysis, such as online resources, is provided at the end of the article. (PsycInfo Database Record (c) 2020 APA, all rights reserved)",
+		"container-title": "Rehabilitation Psychology",
+		"DOI": "10.1037/a0012765",
+		"ISSN": "1939-1544(Electronic),0090-5550(Print)",
+		"issue": "3",
+		"note": "publisher-place: US\npublisher: American Psychological Association",
+		"page": "370-386",
+		"source": "APA PsycNET",
+		"title": "Analyzing longitudinal data with multilevel models: An example with individuals living with lower extremity intra-articular fractures",
+		"title-short": "Analyzing longitudinal data with multilevel models",
+		"volume": "53",
+		"author": [
+			{
+				"family": "Kwok",
+				"given": "Oi-Man"
+			},
+			{
+				"family": "Underhill",
+				"given": "Andrea T."
+			},
+			{
+				"family": "Berry",
+				"given": "Jack W."
+			},
+			{
+				"family": "Luo",
+				"given": "Wen"
+			},
+			{
+				"family": "Elliott",
+				"given": "Timothy R."
+			},
+			{
+				"family": "Yoon",
+				"given": "Myeongsun"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008"
+				]
+			]
+		}
+	},
+	{
+		"id": "Lambert1996",
+		"type": "article-journal",
+		"abstract": "With the rise in efforts to evaluate the quality of mental health care and its outcomes, the measurement of change has become an important topic. This paper tracks the creation of a new instrument designed to assess psychotherapy outcome. The Outcome Questionnaire (OQ) was designed to include items relevant to three domains central to mental health: subjective discomfort, interpersonal relations, and social role performance. This study describes the theoretical development and psychometric properties of the OQ. Psychometric properties were assessed using clinical, community, and undergraduate samples. The OQ appears to have high reliability and evidence to suggest good concurrent and construct validity of the total score. The data presented show that it distinguishes patient from non-patient samples, is sensitive to change, and correlates with other measures of patient distress.",
+		"container-title": "Clinical Psychology & Psychotherapy",
+		"DOI": "https://doi.org/10.1002/(SICI)1099-0879(199612)3:4<249::AID-CPP106>3.0.CO;2-S",
+		"ISSN": "1099-0879",
+		"issue": "4",
+		"language": "en",
+		"note": "_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291099-0879%28199612%293%3A4%3C249%3A%3AAID-CPP106%3E3.0.CO%3B2-S",
+		"page": "249-258",
+		"source": "Wiley Online Library",
+		"title": "The Reliability and Validity of the Outcome Questionnaire",
+		"URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291099-0879%28199612%293%3A4%3C249%3A%3AAID-CPP106%3E3.0.CO%3B2-S",
+		"volume": "3",
+		"author": [
+			{
+				"family": "Lambert",
+				"given": "Michael J."
+			},
+			{
+				"family": "Burlingame",
+				"given": "Gary M."
+			},
+			{
+				"family": "Umphress",
+				"given": "Val"
+			},
+			{
+				"family": "Hansen",
+				"given": "Nathan B."
+			},
+			{
+				"family": "Vermeersch",
+				"given": "David A."
+			},
+			{
+				"family": "Clouse",
+				"given": "Glenn C."
+			},
+			{
+				"family": "Yanchar",
+				"given": "Stephen C."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"1996"
+				]
+			]
+		}
+	},
+	{
+		"id": "Lambert2004",
+		"type": "chapter",
+		"abstract": "Assessing outcome in routine practice for the purpose of enhancing the quality of treatment requires that any outcome measure (a) be easy to administer and score, (b) have high sensitivity to changes in psychological distress over short periods of time, (c) have low cost per administration, and (d) have the ability to tap into a wide array of characteristics associated with mental health functioning. In response to the need for valid measures of psychotherapy outcome in routine practice, Lambert and associates developed the Outcome Questionnaire-45 (OQ-45; Lambert, Hansen, et al. 1996), a 45-item self-report instrument that requires patients to rate their functioning on a 5-point Likert scale. The OQ-45 was designed to access common symptoms across a wide range of adult mental disorders and syndromes, including stress-related illness. In addition, the OQ-45 was designed to be used as a baseline screening instrument with application in primary care for alerting physicians to the need for referral for psychological interventions. However, it was not developed for use as a diagnostic tool. Diagnosis is a task better served by traditional diagnostic practices, including the use of more appropriate instruments, such as the Minnesota Multiphasic Personality Inventory (MMPI; Lambert, Burlingame, et al., 1996). (PsycInfo Database Record (c) 2020 APA, all rights reserved)",
+		"container-title": "The use of psychological testing for treatment planning and outcomes assessment: Instruments for adults, Volume 3, 3rd ed",
+		"event-place": "Mahwah, NJ, US",
+		"ISBN": "978-0-8058-4331-6",
+		"page": "191-234",
+		"publisher": "Lawrence Erlbaum Associates Publishers",
+		"publisher-place": "Mahwah, NJ, US",
+		"source": "APA PsycNET",
+		"title": "The Outcome Questionnaire-45",
+		"author": [
+			{
+				"family": "Lambert",
+				"given": "Michael J."
+			},
+			{
+				"family": "Gregersen",
+				"given": "Ann T."
+			},
+			{
+				"family": "Burlingame",
+				"given": "Gary M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2004"
+				]
+			]
+		}
+	},
+	{
+		"id": "Leach2004",
+		"type": "article-journal",
+		"container-title": "Mental Health and Learning Disabilities Research and Practice",
+		"DOI": "10.5920/mhldrp.2004.1153",
+		"issue": "1",
+		"language": "English",
+		"note": "publisher: University of Huddersfield Press",
+		"page": "53-66",
+		"source": "pure.hud.ac.uk",
+		"title": "Evaluating Psychological Therapies Services: A review of outcome measures and their utility",
+		"title-short": "Evaluating Psychological Therapies Services",
+		"URL": "https://pure.hud.ac.uk/en/publications/evaluating-psychological-therapies-services-a-review-of-outcome-m",
+		"volume": "1",
+		"author": [
+			{
+				"family": "Leach",
+				"given": "Chris"
+			},
+			{
+				"family": "Lucock",
+				"given": "Mike"
+			},
+			{
+				"family": "Iveson",
+				"given": "Steve"
+			},
+			{
+				"family": "Noble",
+				"given": "Rachael"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2004"
+				]
+			]
+		}
+	},
+	{
+		"id": "Maas2005",
+		"type": "article-journal",
+		"abstract": "An important problem in multilevel modeling is what constitutes a sufﬁcient sample size for accurate estimation. In multilevel analysis, the major restriction is often the higher-level sample size. In this paper, a simulation study is used to determine the inﬂuence of different sample sizes at the group level on the accuracy of the estimates (regression coefﬁcients and variances) and their standard errors. In addition, the inﬂuence of other factors, such as the lowest-level sample size and different variance distributions between the levels (different intraclass correlations), is examined. The results show that only a small sample size at level two (meaning a sample of 50 or less) leads to biased estimates of the second-level standard errors. In all of the other simulated conditions the estimates of the regression coefﬁcients, the variance components, and the standard errors are unbiased and accurate.",
+		"language": "en",
+		"page": "7",
+		"source": "Zotero",
+		"title": "Sufﬁcient Sample Sizes for Multilevel Modeling",
+		"volume": "1",
+		"author": [
+			{
+				"family": "Maas",
+				"given": "Cora J M"
+			},
+			{
+				"family": "Hox",
+				"given": "Joop J"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2005"
+				]
+			]
+		}
+	},
+	{
+		"id": "Owen2015a",
+		"type": "article-journal",
+		"abstract": "Objective: The current study used multilevel growth mixture modeling to ascertain groups of patients who had similar trajectories in their psychological functioning over the course of short-term treatment. Method: A total of 10,854 clients completed a measure of psychological functioning before each session. Psychological functioning was measured by the Behavioral Health Measure,which is an index of well-being, symptoms, and life-functioning. Clients who attended 5 to 25 sessions at 46 different university/college counseling centers and one community mental health center were included in this study. Client diagnoses and the specific treatment approaches were not known. Results: A 3-class solution was a good fit to the data. Clients in classes 1 and 3 had moderate severity in their initial psychological functioning scores, and clients in class 2 had more distressed psychological functioning scores. The trajectory for clients in class 1 was typified by early initial change, followed by a plateau, and then another gain in psychological functioning later in treatment. The trajectory for clients in class 2 demonstrated an initial decrease in functioning, followed by a rapid increase, and then a plateau. Last, the clients in class 3 had a steady increase of psychological functioning, in a more linear manner. Conclusion: The trajectories of change for clients are diverse, and they can ebb and flow more than traditional dose-effect and good-enough level models may suggest. (PsycINFO Database Record (c) 2019 APA, all rights reserved)",
+		"container-title": "Journal of Clinical Psychology",
+		"DOI": "10.1002/jclp.22191",
+		"ISSN": "1097-4679(Electronic),0021-9762(Print)",
+		"issue": "9",
+		"note": "publisher-place: US\npublisher: John Wiley & Sons",
+		"page": "817-827",
+		"source": "APA PsycNET",
+		"title": "Trajectories of change in psychotherapy",
+		"volume": "71",
+		"author": [
+			{
+				"family": "Owen",
+				"given": "Jesse"
+			},
+			{
+				"family": "Adelson",
+				"given": "Jill"
+			},
+			{
+				"family": "Budge",
+				"given": "Stephanie"
+			},
+			{
+				"family": "Wampold",
+				"given": "Bruce"
+			},
+			{
+				"family": "Kopta",
+				"given": "Mark"
+			},
+			{
+				"family": "Minami",
+				"given": "T."
+			},
+			{
+				"family": "Miller",
+				"given": "Scott"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "Paley2008a",
+		"type": "article-journal",
+		"abstract": "Aims: To investigate the effectiveness of psychodynamic-interpersonal therapy (PIT) in a routine clinical practice setting. Methods: Full pre–post data were available on 62 out of a total of 67 patients aged between 19 and 60 years. Patients were seen over a 52-month period (2001–2005) receiving a course of PIT therapy (mean number of sessions = 16:9, median number of sessions = 16). The outcomes were assessed using a range of outcome measures: the 32-item version of the Inventory of Interpersonal Problems (IIP-32), the Clinical Outcomes in Routine Evaluation Outcome Measure (CORE-OM), and the Beck Depression Inventory—Second Edition (BDI-II). Study data were benchmarked against comparative national and local data. Results: There were significant pre–post reductions on all measures: IIP-32 effect size (ES) = 0:56; CORE–OM ES = 0:76; BDI–II ES = 0:76. Reliable and clinically significant change was achieved by 34%of clients on the BDI-II and by 40% of client son the CORE-OM. Clients with high pre-therapy levels of interpersonal problems had poorer outcomes. Conclusion: Benchmarking our results against both national and local comparative data showed that our results were less favourable than those obtained where PIT had been used in efficacy trials, but were comparable with reports of other therapies (including cognitive behavioural therapy (CBT)) in routine practice settings. The results show that PIT can yield acceptable clinical outcomes, comparable to CBT in a routine care setting, within the context of current limitations of the practice-based evidence paradigm. (PsycINFO Database Record (c) 2017 APA, all rights reserved)",
+		"container-title": "Psychology and Psychotherapy: Theory, Research and Practice",
+		"DOI": "10.1348/147608307X270889",
+		"ISSN": "2044-8341(Electronic),1476-0835(Print)",
+		"issue": "2",
+		"note": "publisher-place: United Kingdom\npublisher: British Psychological Society",
+		"page": "157-175",
+		"source": "APA PsycNET",
+		"title": "The effectiveness of psychodynamic-interpersonal therapy (PIT) in routine clinical practice: A benchmarking comparison",
+		"title-short": "The effectiveness of psychodynamic-interpersonal therapy (PIT) in routine clinical practice",
+		"volume": "81",
+		"author": [
+			{
+				"family": "Paley",
+				"given": "Graham"
+			},
+			{
+				"family": "Cahill",
+				"given": "Jane"
+			},
+			{
+				"family": "Barkham",
+				"given": "Michael"
+			},
+			{
+				"family": "Shapiro",
+				"given": "David"
+			},
+			{
+				"family": "Jones",
+				"given": "Jaque"
+			},
+			{
+				"family": "Patrick",
+				"given": "Sarah"
+			},
+			{
+				"family": "Reid",
+				"given": "Errol"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2008"
+				]
+			]
+		}
+	},
+	{
+		"id": "Rosenzweig1936",
+		"type": "article-journal",
+		"abstract": "This article discusses some implicit common factors in diverse methods of psychotherapy. It has been often remarked upon that no form of psychotherapy is without cures to its credit. Proponents of psychoanalysis, treatment by persuasion, Christian science and any number of other psychotherapeutic ideologies can point to notable successes. The implication of this fact is not, however, univocal. The proud proponent, having achieved success in the cases he mentions, implies, even when he does not say it, that his ideology is thus proved true, all others false. More detached observers, on the other hand, surveying the whole field tend, on logical grounds, to draw a very different conclusion. If such theoretically conflicting procedures, they reason, can lead to success, often even in similar cases, then therapeutic result is not a reliable guide to the validity of theory. It takes but little reflection to arrive at the roots of the difficulty from the standpoint of logical deduction. Not only is it sound to believe that the same conclusion cannot follow from opposite premises but when such a contradiction appears, as seems to be true in the present instance, it is justifiable to wonder (whether the factors alleged to be operating in a given therapy are identical with the factors that actually are operating and whether the factors that actually are operating in several different therapies may not have much more in common than have the factors alleged to be operating. (PsycINFO Database Record (c) 2019 APA, all rights reserved)",
+		"container-title": "American Journal of Orthopsychiatry",
+		"DOI": "10.1111/j.1939-0025.1936.tb05248.x",
+		"ISSN": "1939-0025(Electronic),0002-9432(Print)",
+		"issue": "3",
+		"note": "publisher-place: US\npublisher: American Orthopsychiatric Association, Inc.",
+		"page": "412-415",
+		"source": "APA PsycNET",
+		"title": "Some implicit common factors in diverse methods of psychotherapy",
+		"volume": "6",
+		"author": [
+			{
+				"family": "Rosenzweig",
+				"given": "Saul"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1936"
+				]
+			]
+		}
+	},
+	{
+		"id": "Shadish1997",
+		"type": "article-journal",
+		"abstract": "This article reports a secondary analysis of past therapy outcome meta-analysis. Fifteen meta-analysis provided effect sizes from 56 studies in previous reviews that met 1 of 3 increasingly stringent levels of criteria for clinical representativeness. The effect sizes were synthesized and compared with results from the original meta-analyses. Effect sizes from more clinically representative studies are the same size at all 3 criteria levels as in past meta-analyses. Almost no studies exist that meet the most stringent level of criteria. Results are interpreted cautiously because of controversy about what criteria best capture the notion of clinical representativeness, because so few experiments have tested therapy in clinical conditions, and because other models for exploring the generalizability of therapy outcome research to clinical conditions might yield different results.",
+		"container-title": "Journal of Consulting and Clinical Psychology",
+		"ISSN": "0022-006X",
+		"issue": "3",
+		"journalAbbreviation": "J Consult Clin Psychol",
+		"language": "eng",
+		"note": "PMID: 9170759",
+		"page": "355-365",
+		"source": "PubMed",
+		"title": "Evidence that therapy works in clinically representative conditions",
+		"volume": "65",
+		"author": [
+			{
+				"family": "Shadish",
+				"given": "W. R."
+			},
+			{
+				"family": "Matt",
+				"given": "G. E."
+			},
+			{
+				"family": "Navarro",
+				"given": "A. M."
+			},
+			{
+				"family": "Siegle",
+				"given": "G."
+			},
+			{
+				"family": "Crits-Christoph",
+				"given": "P."
+			},
+			{
+				"family": "Hazelrigg",
+				"given": "M. D."
+			},
+			{
+				"family": "Jorm",
+				"given": "A. F."
+			},
+			{
+				"family": "Lyons",
+				"given": "L. C."
+			},
+			{
+				"family": "Nietzel",
+				"given": "M. T."
+			},
+			{
+				"family": "Prout",
+				"given": "H. T."
+			},
+			{
+				"family": "Robinson",
+				"given": "L."
+			},
+			{
+				"family": "Smith",
+				"given": "M. L."
+			},
+			{
+				"family": "Svartberg",
+				"given": "M."
+			},
+			{
+				"family": "Weiss",
+				"given": "B."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1997",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "Stiles2004",
+		"type": "article-journal",
+		"abstract": "The authors attempted to replicate and extend D. M. Kivlighan and P. Shaughnessy's (2000) findings of (a) 3 distinctive patterns of alliance development across sessions and (b) a differential association of one of these, a U-shaped quadratic growth pattern, with positive treatment outcome. In data drawn from a clinical trial of brief psychotherapies for depression (N = 79 clients), the authors distinguished 4 patterns of alliance development. These matched 2 of Kivlighan and Shaughnessy's patterns, but not the U-shaped pattern, and none was differentially associated with outcome. However, further examination of the data identified a subset of clients (n = 17) who experienced rupture-repair sequences--brief V-shaped deflections rather than U-shaped profiles. These clients tended to make greater gains in treatment than did the other clients. (PsycINFO Database Record (c) 2016 APA, all rights reserved)",
+		"container-title": "Journal of Counseling Psychology",
+		"DOI": "10.1037/0022-0167.51.1.81",
+		"ISSN": "1939-2168(Electronic),0022-0167(Print)",
+		"issue": "1",
+		"note": "publisher-place: US\npublisher: American Psychological Association",
+		"page": "81-92",
+		"source": "APA PsycNET",
+		"title": "Patterns of Alliance Development and the Rupture-Repair Hypothesis: Are Productive Relationships U-Shaped or V-Shaped?",
+		"title-short": "Patterns of Alliance Development and the Rupture-Repair Hypothesis",
+		"volume": "51",
+		"author": [
+			{
+				"family": "Stiles",
+				"given": "William B."
+			},
+			{
+				"family": "Glick",
+				"given": "Meredith J."
+			},
+			{
+				"family": "Osatuke",
+				"given": "Katerine"
+			},
+			{
+				"family": "Hardy",
+				"given": "Gillian E."
+			},
+			{
+				"family": "Shapiro",
+				"given": "David A."
+			},
+			{
+				"family": "Agnew-Davies",
+				"given": "Roxane"
+			},
+			{
+				"family": "Rees",
+				"given": "Anne"
+			},
+			{
+				"family": "Barkham",
+				"given": "Michael"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2004"
+				]
+			]
+		}
+	},
+	{
+		"id": "Vermeersch2000",
+		"type": "article-journal",
+		"abstract": "Although high levels of reliability are emphasized in the construction of many measures of psychological traits, tests that are intended to measure patient change following psychotherapy need to emphasize sensitivity to change as a central and primary property. This study proposes 2 criteria for evaluating the degree to which an item on a test is sensitive to change: (a) that an item changes in the theoretically proposed direction following an intervention and (b) that the change measured on an item is significantly greater in treated than in untreated individuals. Outcome Questionnaire (Lambert et al., 1996) items were subjected to item analysis by examining change rates in 284 untreated control participants and in 1,176 individuals undergoing psychotherapy. Results analyzed through multilevel or hierarchical linear modeling suggest the majority of items on this frequently used measure of psychotherapy outcome meet both criteria. Implications for test development and future research are discussed.",
+		"container-title": "Journal of Personality Assessment",
+		"DOI": "10.1207/S15327752JPA7402_6",
+		"ISSN": "0022-3891",
+		"issue": "2",
+		"journalAbbreviation": "J Pers Assess",
+		"language": "eng",
+		"note": "PMID: 10879354",
+		"page": "242-261",
+		"source": "PubMed",
+		"title": "Outcome Questionnaire: item sensitivity to change",
+		"title-short": "Outcome Questionnaire",
+		"volume": "74",
+		"author": [
+			{
+				"family": "Vermeersch",
+				"given": "D. A."
+			},
+			{
+				"family": "Lambert",
+				"given": "M. J."
+			},
+			{
+				"family": "Burlingame",
+				"given": "G. M."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2000",
+					4
+				]
+			]
+		}
+	},
+	{
+		"id": "Wampold1997",
+		"type": "article-journal",
+		"abstract": "This meta-analysis tested the Dodo bird conjecture, which states that when psychotherapies intended to be therapeutic are compared, the true differences among all such treatments are 0. Based on comparisons between treatments culled from 6 journals, it was found that the effect sizes were homogeneously distributed about 0, as was expected under the Dodo bird conjecture, and that under the most liberal assumptions, the upper bound of the true effect was about .20. Moreover, the effect sizes (a) were not related positively to publication date, indicating that improving research methods were not detecting effects, and (b) were not related to the similarity of the treatments, indicating that more dissimilar treatments did not produce larger effects, as would be expected if the Dodo bird conjecture was false. The evidence from these analyses supports the conjecture that the efficacy of bona fide treatments are roughly equivalent. (PsycInfo Database Record (c) 2020 APA, all rights reserved)",
+		"container-title": "Psychological Bulletin",
+		"DOI": "10.1037/0033-2909.122.3.203",
+		"ISSN": "1939-1455(Electronic),0033-2909(Print)",
+		"issue": "3",
+		"note": "publisher-place: US\npublisher: American Psychological Association",
+		"page": "203-215",
+		"source": "APA PsycNET",
+		"title": "A meta-analysis of outcome studies comparing bona fide psychotherapies: Empiricially, \"all must have prizes.\"",
+		"title-short": "A meta-analysis of outcome studies comparing bona fide psychotherapies",
+		"volume": "122",
+		"author": [
+			{
+				"family": "Wampold",
+				"given": "Bruce E."
+			},
+			{
+				"family": "Mondin",
+				"given": "Gregory W."
+			},
+			{
+				"family": "Moody",
+				"given": "Marcia"
+			},
+			{
+				"family": "Stich",
+				"given": "Frederick"
+			},
+			{
+				"family": "Benson",
+				"given": "Kurt"
+			},
+			{
+				"family": "Ahn",
+				"given": "Hyun-nie"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1997"
+				]
+			]
+		}
+	},
+	{
+		"id": "zotero-2040",
+		"type": "webpage",
+		"title": "What Works for Whom?: Second Edition: A Critical Review of Psychotherapy Research",
+		"URL": "https://www.guilford.com/books/What-Works-for-Whom/Roth-Fonagy/9781593852726/authors",
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					1,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "Stiles2006",
+		"type": "article-journal",
+		"abstract": "BACKGROUND: Psychotherapy's equivalence paradox is that treatments have equivalently positive outcomes despite non-equivalent theories and techniques. We compared the outcomes of contrasting approaches practised in routine care.\nMETHOD: Patients (n = 1309) who received cognitive-behavioural therapy (CBT), person-centred therapy (PCT) and psychodynamic therapy (PDT) at one of 58 National Health Service (NHS) primary and secondary care sites in the UK during a 3-year period completed the Clinical Outcomes in Routine Evaluation-Outcome Measure (CORE-OM) at the beginning and end of their treatment. Therapists indicated which treatment approaches were used on an End of Therapy form. We compared outcomes of six groups: three treated with CBT, PCT or PDT only, and three treated with one of these plus one additional approach (e.g. integrative, supportive, art), designated CBT+1, PCT+1 or PDT+1 respectively.\nRESULTS: All six groups averaged marked improvement (pre-post effect size = 1.36). Treatment approach and degree of purity ('only' vs. '+1') each accounted for statistically significant but comparatively tiny proportions of the variance in CORE-OM scores (respectively 1% and 0.5% as much as pre-post change). Distributions of change scores were largely overlapping.\nCONCLUSIONS: Results for these three treatment approaches as practised routinely across a range of NHS settings were generally consistent with previous findings that theoretically different approaches tend to have equivalent outcomes. Caution is warranted because of limited treatment specification, non-random assignment, lack of a control group, missing data and other issues.",
+		"container-title": "Psychological Medicine",
+		"DOI": "10.1017/S0033291706007136",
+		"ISSN": "0033-2917",
+		"issue": "4",
+		"journalAbbreviation": "Psychol Med",
+		"language": "eng",
+		"note": "PMID: 16476185",
+		"page": "555-566",
+		"source": "PubMed",
+		"title": "Effectiveness of cognitive-behavioural, person-centred and psychodynamic therapies as practised in UK National Health Service settings",
+		"volume": "36",
+		"author": [
+			{
+				"family": "Stiles",
+				"given": "William B."
+			},
+			{
+				"family": "Barkham",
+				"given": "Michael"
+			},
+			{
+				"family": "Twigg",
+				"given": "Elspeth"
+			},
+			{
+				"family": "Mellor-Clark",
+				"given": "John"
+			},
+			{
+				"family": "Cooper",
+				"given": "Mick"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2006",
+					4
+				]
+			]
+		}
+	}
+]

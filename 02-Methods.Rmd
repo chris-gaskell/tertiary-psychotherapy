@@ -1,0 +1,142 @@
+---
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+# Method
+
+## Design {.unnumbered}
+
+A retrospective analysis of naturalistic therapy outcomes data collected from a tertiary care/specialist psychotherapy service.
+
+## Service {.unnumbered}
+
+Historical data from a tertiary level Specialist Psychotherapy Service (SPS) in a UK city in the North of England
+spanning a
+`r round(lubridate::interval(min(Data$dte_admin),max(Data$dte_admin))/years(1),0)`-year period
+(`r paste(format(min(Data$dte_admin), format = "%Y"), format(max(Data$dte_admin), format = "%Y"), sep = "-")`) was accessed.
+Patients are referred to SPS from a variety of referrers, including primary care therapy services, secondary care therapy services/community mental health teams, or general practitioners. Patients referred have enduring and complex mental health difficulties and have often not responded to previous psychological treatments within primary and/or secondary care therapy services. The staff team at SPS is multi-disciplinary, with a range of core professions (clinical psychologists, psychotherapists and psychiatrists) and training professionals represented. Many of the treating clinicians have received further training and accreditation in specific models of psychotherapy. Supervision is provided internally and externally, with each clinician receiving clinical supervision matched on therapeutic modality. The treatments offered include: cognitive-behaviour therapy (CBT), cognitive-analytic therapy (CAT), psycho-analytic therapy (PAT) and eye movement desensitization and reprocessing (EMDR). Clinicians offer a single modality. Patients are allocated to treatments based on team/clinician judgment of model suitability. The length of treatment varies between therapeutic modalities, with fixed contract lengths agreed at the start of treatment. Generally, CBT and EMDR offer treatment for six-months or more, CAT offers either 8, 16 or 24 sessions and PAT offers contacts of 1-2 years. PAT treatments are offered as either individual or group-based. For some patients, multiple treatments are provided within a single care episode, and within a specific modality. For example, patients may receive consecutive treatments of CBT, or alternatively patients who receive one-to-one PAT may progress to group treatment. Patients are offered follow-up appointments to review progress. The uptake of follow-up appointments is optional and determined collaboratively by clinician and patient. Follow-up analyses were not explored within the current study. The self-report outcome measure used in this study was the Outcome Questionnaire-45 (OQ-45, Appendix A)
+
+## Patients
+
+From the outset of the evaluation (2011) four teams within SPS enrolled in the outcomes evaluation and have subsequently contributed to the current study. These teams included (i) the Personality Disorder Team, (ii) the Anxiety and/or and Post-Traumatic Stress Disorder (PTSD) Team, (iii) the Focused Depression Team, and finally (iv) the Obsessive-Compulsive Disorder (OCD) and/or Body Dysmorphic-Disorder (BDD) Team. Since implementation, the latter three teams have been merged into a single team, known as the Mood, Anxiety and Post-Traumatic Stress Related Disorders Team (MAPPS). Regardless of service accessed, patients are required to be: (i) aged 16 years or older, (ii) not currently experiencing a mental health crisis, (iii) and have previously accessed psychological intervention from primary/secondary care services.
+
+### Sample Size
+Data collection spanned 
+`r round(as.numeric(difftime(max(Data$dte_admin), min(Data$dte_admin),   unit="weeks"))/52.25, 0)` years
+(`r format(min(Data$dte_admin), "%B %Y")` - `r format(max(Data$dte_admin), "%B %Y")`). 
+There were
+`r prettyNum(data.start %>% nrow(), big.mark = ",")` OQ-45 administrations collected from 
+`r length(unique(Data$PersonID))` patients, treated by 53 therapists. When limiting data to the first care episode (referral to discharge) there were
+`r prettyNum(Data %>% nrow(), big.mark = ",")` OQ-45s remaining.
+There were `r nrow(PrePostdf)` OQ-45s across `r Wide.Data %>% nrow()` patients with at least two OQ-45s (i.e. for recovery and effectiveness analyses) and at least one treatment session. There were 
+`r mlm.wide %>% nrow()` patients with at least three OQ-45 measures and which could be used in the growth-curve analysis. Differences between treatment groups were explored for a range of demographic variables.
+
+## Procedure {.unnumbered}
+
+### Outcome Monitoring and Data Extraction 
+
+Patients complete an outcome measure at various stages of therapy. This includes: (i) assessment; (ii) therapy sessions; (iii) final therapy appointment; and (iv) follow-up appointments. In order for the author to analyse the SPS outcomes data an application was made to an NHS research ethics committee. As the outcomes database originally contained very limited information regarding co-variates (i.e. no demographic, treatment, or service usage information) a request (section 251) was made to access additional information held within patient electronic health records. This application was made to the NHS Confidentiality Advisory Group (CAG) through the Health Research Authority (HRA). More specifically, permission to access, view and analyse information regarding demographic (gender, age, employment, ethnicity), treatment (dosage, treatment received, clinician, completion status), and service usage (others services sought prior and since) variables. Following a full set of approvals (Appendix B) the author accessed relevant IT systems training. Extraction utilised an automated extraction process, supported by a data analyst and clinical governance officer within SPS. Instances when information could not be extracted using this approach were rare. When this did happen, manual data extraction was conducted by the author. In line with guidance set out by the Confidentiality Advisory Group (CAG) an opt-out poster was placed in the SPS waiting room and the SPS website during April 2021 for four weeks (Appendix C). At the point of extraction there were no patient opt-out requests. All extracted information was saved to a carbon copy of the outcomes database and stored in line with data storage requirements using a secure VPN, provided by the host health-care trust (Sheffield Health & Social Care NHS Foundation Trust). Once extraction was complete it was stripped of unique person identifiers. The spreadsheet was then anonymity checked by an SPS clinician (SK) before being transferred from NHS secure servers to the designated data-handler (M-SB) within the University of Sheffield (sent via password encrypted e-mail). The database remained password encrypted throughout with access only available to the author and the data-handler.
+
+### Outcome Measurement {.unnumbered}
+
+The OQ-45 is a 45 item self-report measure of global psychological distress [@Lambert2004]. Each item provides a 5-point Likert scale ranging from 0 (never) to 4 (almost always) with the cumulative score across items (maximum = 180) providing a global distress score. US normative data for community and clinical populations  [@Lambert1996] has provided a clinical cut-off point of 64. Patients who score above 63 are considered to be within the clinical range, while scores above 85 are considered to be very high [@Lambert2004a]. The reliable change score is 14  [@Lambert2004a]. The psychometric properties of the OQ-45 are well documented [@Lambert1996]. For convergent validity, the measure has shown to have moderate to high correlations with a range of widely used measures of therapy effectiveness [@Lambert1996]. The OQ-45 has good reliability/internal consistency [r = .93, @Lambert1996] and is sensitive to change [@Lambert1996; @Vermeersch2000]. The OQ-45 has been validated in numerous countries however there is, to the author's knowledge, no clinical or community normative data for the UK. Embedded within the OQ-45 are three additional sub-scales.
+*Symptom distress* (range = 100, cut-off = 36, reliable change = 10) is designed to map onto symptoms of common mental health disorders [i.e., anxiety and affective disorder symptoms, @Lambert2004a].
+*Interpersonal relationships* (range = 1-36, cut-off = 15, reliable change = 8) explores complaints of conflict, loneliness and family difficulty.
+Finally, *Social role* (range = 44, cut-off = 12, reliable change = 7) is the extent to which the individual patient experiences difficulties relating to occupational and functional independence. 
+
+## Analysis {.unnumbered}
+
+For patients who had multiple recorded care episodes, we used the first care episode recorded within the OQ-45 database. Care episode is defined as the time between the points of referral and discharge. For some patients, a single care episode included multiple treatments within a single modality. As concurrent treatments (based on the information available) could not be accurately disentangled, we analysed change across care episodes. Change was considered by comparing the first and final OQ-45 treatment session (exclusive of follow-up) within a single care episode. Within this approach the first recorded OQ-45 within the care episode was used as the baseline score while the final recorded score was used as the end score. This represented a last observation carried forward approach so that patients who dropped out prematurely, or who did not complete an OQ-45 in the final appointment were not excluded from the analysis. This provided a more conservative estimate of effect size.  As patients complete the OQ-45 prior to treatment sessions, we only measured change in patients who had received at least two treatment sessions, to ensure that at least some treatment had been delivered. This sample was used for analysis of effectiveness and recovery rates. Longitudinal multi-level (linear mixed) modeling was employed to examine trajectories of change. Patients with a minimum of three OQ-45 assessments, and of which at least one represented a treatment appointment were included. This was to allow for the possibility of higher-order polynomial change trajectories (e.g. quadratic, cubic).
+
+### Effectiveness
+
+Pooled full and sub-scale effect-sizes were calculated using Cohen's *d* [standardised mean change, @Cohen1988] using the formula advocated in benchmarking studies [@Minami2008]. This approach subtracted the pooled end-of-therapy score from the pooled pre-treatment score, before dividing it by the pre-treatment standard deviation. Regression to the mean was accounted for by adjusting confidence intervals by the pre-post correlation (Pearson's *r*) between pre and post-treatment measures. Effect-sizes were interpreted as ‘small’ (0.2–0.5), ‘moderate’ (0.5–0.8) or ‘large’ (> .08). Effect-sizes were calculated for each treatment modality (cognitive-analytic, cognitive-behavioral [including EMDR] and psycho analytic). 
+
+### Benchmarking
+A benchmarking approach was used to compare the effectiveness of tertiary care psychotherapy to other services and sectors [@Minami2008]. Benchmarking compares clinical outcome data to established reference points from efficacy trials or practice-based outcome studies [@Delgadillo2014; @Minami2008]. This allows services to compare their performance against services which are similar in design, or against aggregated study benchmarks [@DepartmentofHealth2004].
+
+To benchmark service intake scores, a range of US OQ-45 intake severity comparators were used to create a rounded comparison. These included: 
+(i) an employee assistance program [@Lambert1996],
+(ii) a University out-patient clinic [@Lambert1996],
+(iii) a community health centre [@Lambert1996], and
+(iv) acute short-stay inpatients [@Doerfler2002].
+
+For pre-post change, a variety of effectiveness benchmarks were used. Findings from a large Canadian tertiary care outpatient outcome study [@Johansson2014] were the  tertiary-care benchmark. In order to better contextualize outcomes, an additional OQ-45 benchmark was developed that included N=13 studies that had employed the OQ-45. Cohen’s *d* effect-sizes were then entered into a random effects meta-analysis to provide an aggregated OQ-45 effectiveness benchmark. Further details regarding the meta-analytic benchmark is provided in ‘additional analysis detail’ (Appendix D).
+
+### Recovery
+
+This study calculated categorical rates of improvement and deterioration using reliable and clinically significant change indices [@Jacobson1992] for the whole service and the three treatments. A *reliable change* (improvement or deterioration) was indicated when a patient met a minimum pre-determined change score based on a magnitude of change that exceeded measurement error. A *clinical change* change was indicated when a patient moved from above the threshold for clinical distress to below. Patients who meet criteria for both reliable improvement and clinical change were labeled as ‘recovered.’ Post-treatment status was classified as either: (i) recovery, (ii) reliable improvement, (iii) no reliable change, or (v) reliable deterioration. Patients who scored below the clinical threshold at baseline assessment (i.e., no initial clinical status) were unable to achieve full recovery. Statistical equations are provided in Equations 1 and 2. Recovery rates for each of the three treatments were then compared to a set of established OQ-45 recovery benchmarks [@Hansen2002a]. These benchmarks represent recovery rates for pre-post psychological therapy for a range of different US care sectors (employee assistential program, community mental health centre, health maintenance organisation). We selected the pooled service benchmark and the community mental health centre benchmark for perceived relevance to the current study.
+
+### Dose Response
+
+In order to determine how number of sessions impacts upon statistical and clinical change, dose-response comparisons were made. Unfortunately, as OQ-45s were not always administered at the start of input, this means that the total number of sessions often differed from the number of sessions measured. For dose-response calculations, number of sessions measured (i.e. last OQ-45 session number - first OQ-45 session number) was used. Patients were ordered by number of sessions measured and then split into 10 groups (i.e. deciles). Dosage groups were then compared on the basis of statistical change (Cohen's *d*) and clinical change (recovery rates). Patients who do not respond to treatment (i.e. no change *or* deterioration) were plotted (bar plot) to visualise differences between groups.
+
+### Growth Curve Modelling
+Individual growth trajectories (also termed growth curves) were developed for the OQ-45 total score and each of the sub-scales. Growth curve modeling allows for exploration of change trajectories, variance in change, and the factors that influence change. Each of these can be considered at a within-person and/or between person level. The approach is robust to missing and unbalanced data inherent in practice-based datasets and which was particularly the case for the current study. Available guidance for conducting growth curve modeling was followed throughout [@Singer2003].
+The hierarchical data structure for the current study was repeated face-to-face sessions (level-1) nested within individual patients (level-2). Further details regarding maximum likelihood and power calculation are provided in Appendix D. The statistical equations for calculating individual growth curves are shown in Equation 3.
+
+#### Time
+As the OQ-45 administration number did not necessarily correspond to session number, this was not a viable temporal predictor. There were two alternative temporal variants which were considered for the current study. The number of *days* since the first recorded OQ-45 and the number of face-to-face *sessions* (i.e., contacts) since the first recorded session (in that care episode). Sessions was preferred for the reason that this could more precisely place the first recorded OQ-45 within the context of service input, particularly in situations when the first recorded OQ-45 did not represent the first treatment session. Sessions is also in fitting with the wider literature employing sessions as a measure of treatment dosage. Session number was centered on the first session (i.e. first session = 0). Additional sessions variables were created to assess polynomial and log-linear trends. This included sessions^2^ (quadratic), sessions^3^ (cubic), and the natural logarithm of sessions (log-linear). A log(sessions+1) transformation was used to adjust for time scores of 0.
+
+### Model Building
+There were four stages of model building: i) co-variance structure selection; ii) time-trend selection, iii) unconditional models, and (iv) conditional models. Unconditional models are a set of models which do not include predictor variables (other than sessions). These include means models (i.e. intercept only), random intercepts models, and random slopes models.
+
+#### Covariance structure
+In order to select a best-fitting covariance structure, random slopes unconditional models were estimated fitting a series of alternative covariance structures (standard, unstructured, compound symmetry, auto-regressive1, topeplitz). The unstructured covariance structure failed to converge and was subsequently discarded. The remaining structures were nested in order of complexity by descending the degrees of freedom for each model (standard, topeplitz, compound symmetry, auto-regressive1). Each model was compared to the previous to determine if there was an improved goodness-of-fit. Goodness-of-fit statistics included the Akaike’s information criterion (AIC), bayesian information criterion (BIC) and -2 log-likelihood statistic, with lower scores indicating improved model fit. log-likelihood ratio tests (i.e. Chi-squared test) compare adjacent pairwise models, however these were not applicable for model combinations that possess identical degrees of freedom (i.e. standard vs toeplitz or compound symmetry vs auto-regression 1). For this reason, goodness-of-fit statistics alone were used to select covariance structure. Topeplitz provided the best fit for total OQ-45 score, symptom distress and interpersonal relationships (table shown in Appendix E). A standard covariance structure provided the best fit for social role.
+
+#### Time form
+Random slopes models were developed using a series of linear, log-linear and higher order polynomial models (quadratic and cubic), while retaining optimal covariance structures. As linear and log-linear models are not nested, they were compared using goodness-of-fit statistics only. The best-fitting model was then compared against quadratic and cubic trends using likelihood ratio tests. A cubic form best fit OQ-45 total score, inter-personal and symptom distress while a log-linear form best fit social role. Time form fixed effects and goodness-of-fit statistics are shown in Appendix F.
+
+#### Unconditional models
+For unconditional models, the fixed effects of intercept (initial status) and slope (sessions) were assessed for significance in a series of models (i.e., means model, random intercepts, random slopes). Allowing intercepts and slopes to vary provided significant improved fit for each outcome variable (as shown in Appendix G). Final unconditional and conditional models subsequently utilised random intercepts and slopes, optimal covariance structures and optimal time trends. As topeplitz covariance structures are fit using generalised least squares there were no random effects to report. Growth curves for unconditional models were visualised using scatter plots.
+
+#### Conditional models
+As each of the four dependent variables found a significant main effect for time (i.e. sessions), predictor variables were considered for inclusion in model iterations. Therapy modality was the only predictor variable included in conditional models. As the CAT treatment group was much smaller than the CBT and PAT groups it was decided to merge CAT and PAT to form a single analytic treatment group. The associated hypothesis for the current study was that there would be no significant effect for therapy modality and no significant time:modality interaction. There were no significant differences between the cognitive and analytic groups for average baseline distress (*p* = `r format.pval(round(base.anova.mlm$p, 3), digits = 3, eps = .001)`) or
+number of sessions (*p* = `r format.pval(round(Dur.anova.mlm$p, 3), digits = 3, eps = .001)`);
+therefore no adjustments were necessary.
+
+### Statistical Software
+All analyses were performed using R [@R-base, v 4.0.2]. Multi-level modeling was conducted using the nlme [@R-nlme] package while growth-curve plots were developed using ggplot2 [@ggplot22016]. Effect-sizes (Cohen's *d*) and random-effects meta-analysis were computed using the metafor package [@metafor2010], while forest plots were made using [@forestplot2020].
+
+
+\newpage
+
+### Equations
+
+\begin{equation} \label{eq1}
+\begin{split}
+RCI & = \frac{(pre) - (posttreatment)}{S_{diff}} \\
+& S_{diff} = \sqrt{2S2/E} \\
+& S_E = SD\sqrt{1 - r_{XX}}
+\end{split}
+\end{equation}
+Equation \ref{eq1} is the formula for calculation of reliable change.
+
+
+\begin{equation} \label{eq2}
+\begin{split}
+CSC & = \frac{(SD_1)(M_2)+ (SD_2)(M_1)}{SD_1 + SD_2}
+\end{split}
+\end{equation}
+Equation \ref{eq2} is the formula for calculation of the clinical cut-off.
+
+\begin{equation} \label{eq3}
+\begin{split}
+\mbox{Level 1}\\
+& Y{ij} = \beta_{0j} + \beta_{1j} Observation_{ij} + R_{ij}\\
+\mbox{Level 2}\\
+& \pi_{0i} = \gamma_{00} + \gamma_{01} Therapy_j + \zeta_{0i}\\
+& \pi_{1i} = \gamma_{10} + \gamma_{11} Therapy_j + \zeta_{1i}\\
+\mbox{with}\\
+& \left(\frac{U_{oj}}{U_{1j}}\right) \sim\ \mathcal{N} \left(\frac{0, \tau_{00}^{2} \tau_{01}}{0, \tau_{01}, \tau_{10}^{2}}\right)\\
+\mbox{and}\\
+& U_{oj} \sim\ \mathcal{N} \left(0, \sigma^2\right)
+\end{split}
+\end{equation}
+Equation \ref{eq3} is the formula for growth curves.
+
+\newpage
+
+

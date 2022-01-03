@@ -1,0 +1,290 @@
+```{r Npeople, include = F}
+# Calculate number of unique participants and save to object.
+N <- Data %>% group_by(PersonID) %>%
+  filter(n() >= 2L) %>% ungroup()
+N <- N %>% group_by(PersonID) %>% count()
+```
+```{r Flow, include=F}
+data <- list(
+  Patients <-  n_distinct(Data$PersonID, na.rm = FALSE),
+  Less_Spoiled <- Data %>% filter(TotalScore >= 0) %>% select(PersonID) %>% n_distinct(na.rm = FALSE),
+  Two_obs <- Data %>% group_by(PersonID) %>% filter(n() >= 2L) %>% select(PersonID) %>%  n_distinct( na.rm = FALSE),
+  Included <- Two_obs,
+  CBT2 <- Wide.Data %>% filter(therapy == "CBT") %>% count(),
+  CAT2 <- Wide.Data %>% filter(therapy == "CAT") %>% count(),
+  PDT2 <- Wide.Data %>% filter(therapy == "PDT") %>% count(),
+  CBT3 <- mlm.wide %>% filter(therapy == "CBT") %>% count(),
+  CAT3 <- mlm.wide %>% filter(therapy == "CAT") %>% count(),
+  PDT3 <- mlm.wide %>% filter(therapy == "PDT") %>% count()
+  )
+names(data) <- c("Patients", "Less_Spoiled", "Two_obs", "Included",
+                 "CBT2", "CAT2", "PDT2", "CBT3", "CAT3", "PDT3")
+
+Flow <- DiagrammeR::grViz("
+digraph graph2 {
+
+graph [layout = dot]
+
+# node definitions with substituted label text
+node [shape = rectangle, width = 4, height = 1.25, fillcolor = Biege]
+a [label = 'Original Database\n @@1', fontsize = 22]
+b [label = 'At least two OQ-45s\n @@3', fontsize = 22]
+c [label = 'Included in Study\n @@4', fontsize = 22]
+
+CBT [label = 'Cognitive-Behaviour Therapy', fontsize = 22]
+CAT [label = 'Cognitive-Analytic Therapy', fontsize = 22]
+PDT [label = 'Psycho-Analytic Therapy', fontsize = 22]
+
+CBT2 [label = 'CBT: Two OQ-45s\n @@5', fontsize = 22]
+CAT2 [label = 'CAT: Two OQ-45s\n @@6', fontsize = 22]
+PDT2 [label = 'PAT: Two OQ-45s\n @@7', fontsize = 22]
+
+CBT3 [label = 'CBT: Three OQ-45s\n @@8', fontsize = 22]
+CAT3 [label = 'CAT: Three OQ-45s\n @@9', fontsize = 22]
+PDT3 [label = 'PAT: Three OQ-45s\n @@10', fontsize = 22]
+
+a -> b -> c -> 'CBT', 'CAT', 'PDT'
+CBT -> CBT2 -> CBT3
+CAT -> CAT2 -> CAT3
+PDT -> PDT2 -> PDT3
+}
+
+[1]: paste0('(n = ', data$Patients, ')')
+[2]: paste0('(n = ', data$Less_Spoiled, ')')
+[3]: paste0('(n = ', data$Two_obs, ')')
+[4]: paste0('(n = ', data$Included, ')')
+[5]: paste0('(n = ', data$CBT2, ')')
+[6]: paste0('(n = ', data$CAT2, ')')
+[7]: paste0('(n = ', data$PDT2, ')')
+[8]: paste0('(n = ', data$CBT3, ')')
+[9]: paste0('(n = ', data$CAT3, ')')
+[10]: paste0('(n = ', data$PDT3, ')')
+")
+
+Flow %>%
+  export_svg() %>%
+  charToRaw %>%
+  rsvg_pdf("/Users/chris/Desktop/Empirical/R_Empirical/Flow.pdf")
+```
+
+# Results
+ 
+## Sample
+For the `r Wide.Data %>% nrow()` patients included in the effectiveness and recovery analysis patients had an average of 
+`r format(round(mean(N$n), 2), nsmall=2)` OQ-45 administrations (SD = 
+`r format(round(SD(N$n), 2), nsmall=2)`, range = 
+`r round(min(N$n), 2)`-`r round(max(N$n), 2)`)
+over a care episode duration of `r paste(Wide.Data %>%  filter(days.open < 100000) %>% summarise(mean(days.open/7) %>% round(2)))` weeks on average
+(SD = `r paste(Wide.Data %>%  filter(days.open < 10000) %>% summarise(sd(days.open/7) %>% round(2)))`,
+range = `r paste(Wide.Data %>%  filter(days.open < 10000) %>% summarise(min(days.open/7) %>% round(2)))`-
+`r paste(Wide.Data %>% filter(days.open < 10000) %>% summarise(max(days.open/7) %>% round(2)))`).
+This was likely to have been influenced by periods of time on treatment waiting lists, however this could not be accounted for as such information was not available for all patients.
+Of the included patients there were only
+`r Wide.Data %>%  filter(days.open < 366) %>% nrow()`
+(`r round(Wide.Data %>%  filter(days.open < 366) %>% nrow()/nrow(Wide.Data)*100, 2)`%)
+with care periods shorter than 12 months.
+
+Mean number of sessions within the first recorded care episode was 
+`r round(mean(Wide.Data$num_contacts_ep_total), 2)`
+(SD = `r round(sd(Wide.Data$num_contacts_ep_total), 2)`,
+range = `r min(Wide.Data$num_contacts_ep_total)`-`r max(Wide.Data$num_contacts_ep_total)`)
+and across all SPS care episodes a totaled mean of
+`r round(mean(Wide.Data$num_contacts_total), 2)` sessions
+(SD = `r round(sd(Wide.Data$num_contacts_total), 2)`,
+range = `r min(Wide.Data$num_contacts_total)`-`r max(Wide.Data$num_contacts_total)`).
+There was
+`r Wide.Data %>% filter(num_contacts_ep_total >= 10) %>% nrow()` (`r round(Wide.Data %>% filter(num_contacts_ep_total >= 10) %>% nrow()/Wide.Data %>% nrow()*100, 2)`%)
+patients that received at least 10 sessions,
+`r Wide.Data %>% filter(num_contacts_ep_total >= 20) %>% nrow()` (`r round(Wide.Data %>% filter(num_contacts_ep_total >= 20) %>% nrow()/Wide.Data %>% nrow()*100, 2)`%)
+received at least 20 sessions,
+`r Wide.Data %>% filter(num_contacts_ep_total >= 40) %>% nrow()` (`r round(Wide.Data %>% filter(num_contacts_ep_total >= 40) %>% nrow()/Wide.Data %>% nrow()*100, 2)`%)
+received at least 40 sessions,
+`r Wide.Data %>% filter(num_contacts_ep_total >= 100) %>% nrow()` (`r round(Wide.Data %>% filter(num_contacts_ep_total >= 100) %>% nrow()/Wide.Data %>% nrow()*100, 2)`%)
+received at least 100 sessions,
+`r Wide.Data %>% filter(num_contacts_ep_total >= 150) %>% nrow()` (`r round(Wide.Data %>% filter(num_contacts_ep_total >= 150) %>% nrow()/Wide.Data %>% nrow()*100, 2)`%)
+received at least 150 sessions, and
+`r Wide.Data %>% filter(num_contacts_ep_total >= 200) %>% nrow()` (`r round(Wide.Data %>% filter(num_contacts_ep_total >= 200) %>% nrow()/Wide.Data %>% nrow()*100, 2)`%)
+attended for over 200 sessions.
+
+PAT treatments were the lengthiest
+(`r Wide.Data %>% filter(therapy == "PDT") %>% summarise(mean(num_contacts_ep_total)) %>% as.numeric() %>% round(2) %>% format(nsmall = 2)`,
+SD = `r Wide.Data %>% filter(therapy == "PDT") %>% summarise(sd(num_contacts_ep_total)) %>% as.numeric() %>% round(2) %>% format(nsmall = 2)`,
+range = `r Wide.Data %>% filter(therapy == "PDT") %>% summarise(min(num_contacts_ep_total)) %>% as.numeric()`-`r Wide.Data %>% filter(therapy == "PDT") %>% summarise(max(num_contacts_ep_total)) %>% as.numeric()`),
+followed by CBT
+(`r Wide.Data %>% filter(therapy == "CBT") %>% summarise(mean(num_contacts_ep_total)) %>% as.numeric() %>% round(2) %>% format(nsmall = 2)`,
+SD = `r Wide.Data %>% filter(therapy == "CBT") %>% summarise(sd(num_contacts_ep_total)) %>% as.numeric() %>% round(2) %>% format(nsmall = 2)`,
+range = `r Wide.Data %>% filter(therapy == "CBT") %>% summarise(min(num_contacts_ep_total)) %>% as.numeric()`-`r Wide.Data %>% filter(therapy == "CBT") %>% summarise(max(num_contacts_ep_total)) %>% as.numeric()`),
+and then CAT
+(`r Wide.Data %>% filter(therapy == "CAT") %>% summarise(mean(num_contacts_ep_total)) %>% as.numeric() %>% round(2) %>% format(nsmall = 2)`,
+SD = `r Wide.Data %>% filter(therapy == "CAT") %>% summarise(sd(num_contacts_ep_total)) %>% as.numeric() %>% round(2) %>% format(nsmall = 2)`,
+range = `r Wide.Data %>% filter(therapy == "CAT") %>% summarise(min(num_contacts_ep_total)) %>% as.numeric()`-`r Wide.Data %>% filter(therapy == "CAT") %>% summarise(max(num_contacts_ep_total)) %>% as.numeric()`).
+There were significant differences between modalities regarding duration of treatment (F[`r Dur.anova.sess$DFn`, `r Dur.anova.sess$DFd`], = `r round(Dur.anova.sess$F,2)`, p = `r format.pval(Dur.anova.sess$p, digits = 3, eps = .001)`). More specifically, PAT delivered significantly more sessions than 
+CBT (*p* = `r format.pval(round(Dur.anova.pwc$p.adj[3], 3), eps = .001, digits = 3)`)
+or CAT (*p* = `r format.pval(round(Dur.anova.pwc$p.adj[2], 3), eps = .001, digits = 3)`).
+There was no significant difference in number of sessions between CBT and CAT (*p* = `r format.pval(round(Dur.anova.pwc$p.adj[1], 3), eps = .001, digits = 3)`).
+
+The mean average baseline score across patients included in the effectiveness/recovery analyses was 
+`r format(round(mean(Wide.Data$Pre), 2), nsmall = 2)` (SD = `r format(round(sd(Wide.Data$Pre), 2), nsmall = 2)`).
+There was no significant difference in baseline distress between treatments (see Table 1).
+CBT (M = `r format(round(Wide.Data %>% filter(therapy == 'CBT') %>% summarise(mean(Pre)),2), nsmall = 2)`,
+     SD = `r format(round(Wide.Data %>% filter(therapy == 'CBT') %>% summarise(sd(Pre)),2),nsmall=2)`) was marginally higher than
+CAT (M = `r format(round(Wide.Data %>% filter(therapy == 'CAT') %>% summarise(mean(Pre)),2),nsmall=2)`,
+     SD = `r format(round(Wide.Data %>% filter(therapy == 'CAT') %>% summarise(sd(Pre)),2),nsmall=2)`) and
+PAT (M = `r format(round(Wide.Data %>% filter(therapy == 'PDT') %>% summarise(mean(Pre)),2),nsmall=2)`,
+     SD = `r format(round(Wide.Data %>% filter(therapy == 'PDT') %>% summarise(sd(Pre)),2),nsmall=2)`).
+CBT was the most frequently delivered treatment (n = `r Wide.Data %>% filter(therapy == "CBT") %>% count()`), 
+followed by PAT (n = `r Wide.Data %>% filter(therapy == "PDT") %>% count()`), and then CAT (n = `r Wide.Data %>% filter(therapy == "CAT") %>% count()`). Completion status (i.e., completer or premature drop-out) was not routinely recorded and therefore could not be used in the current study. In terms of clinicians, there was `r length(unique(Wide.Data$clinician))` unique clinicians recorded.
+
+## Sample Characteristics
+Sample characteristics are displayed in Table 1. Almost a third of referrals came from general practitioners
+(`r paste(format(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(referrer == "GP") %>% nrow(),2),nsmall=2),"%", sep = "")`).
+The average age across participants was
+`r paste(Wide.Data %>% summarise(mean(age) %>% round(2))," (SD = ", Wide.Data %>% summarise(SD(age) %>% round(2)),")", sep = "")`
+and there was a greater representation of female patients (`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(gender == "Female") %>% nrow(),2),"%", sep = "")`).
+The vast majority of patients identified as white British
+(`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(ethnicity == "White British") %>% nrow(),2),"%", sep = "")`).
+A substantial proportion of patients did not have a recorded employment status
+(`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(employment == "Not Known/Other") %>% nrow(),2),"%", sep = "")`).
+There was more people in paid/unpaid employment (`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(employment == "Employed") %>% nrow(),2),"%", sep = "")`)
+than not employed (`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(employment == "Unemployed") %>% nrow(),2),"%", sep = "")`).
+In terms of marital status,
+`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(civil_status == "Married or Settled") %>% nrow(),2),"%", sep = "")` were married or in a settled relationship and
+`r paste(round((100/Wide.Data %>% nrow())*Wide.Data %>% filter(civil_status == "Single") %>% nrow(),2),"%", sep = "")` were single. Significant differences were shown between differing demographic groups for: (i) baseline symptom distress, (ii) number of treatment sessions, (iii) care episode duration, and (iv) employment status. 
+
+\onehalfspacing
+```{r PatientInformationTable, echo=F, include=T}
+PatientInfo.Table
+```
+\doublespacing
+
+## Benchmarking; intake and outcomes
+The SPS intake score (mean = `r format(round(mean(Wide.Data$Pre), 2), nsmall = 2)`, SD = `r format(round(sd(Wide.Data$Pre), 2), nsmall = 2)`) was markedly higher than any of the OQ-45 baseline distress benchmarks (73.02-89.17). The overall SPS effect-size was `r as.character(effectsize::interpret_d(es.data %>% filter(group == "Current Study" & measure == "TotalScore") %>% select(yi) %>% as.numeric(), rules = "cohen1988"))`
+(*d* = `r es.data %>% filter(group == "Current Study" & measure == "TotalScore") %>% select(yi) %>% as.numeric() %>% round(2)`,
+95% CI = 
+`r es.data %>% filter(measure == "TotalScore" & group == 'Current Study') %>% select(ci.lb) %>% as.numeric() %>% round(2)`-
+`r es.data %>% filter(measure == "TotalScore" & group == 'Current Study') %>% select(ci.ub) %>% as.numeric() %>% round(2)`).
+For specific treatments,
+CAT produced the largest effect size (`r effectsize::interpret_d(es.data %>% filter(measure == "TotalScore" & group == "CAT") %>% select(yi) %>% as.numeric()) %>% as.character()`,
+*d* = `r es.data %>% filter(measure == "TotalScore" & group == "CAT") %>% select(yi) %>% as.numeric() %>% round(2)`,
+95% CI = 
+`r es.data %>% filter(measure == "TotalScore" & group == "CAT") %>% select(ci.lb) %>% as.numeric() %>% round(2)`-
+`r es.data %>% filter(measure == "TotalScore" & group == "CAT") %>% select(ci.ub) %>% as.numeric() %>% round(2)`) and although this was greater than both CBT 
+(*d* = `r es.data %>% filter(measure == "TotalScore" & group == "CBT") %>% select(yi) %>% as.numeric() %>% round(2)`, 95% CI = 
+`r es.data %>% filter(measure == "TotalScore" & group == "CBT") %>% select(ci.lb) %>% as.numeric() %>% round(2)`-
+`r es.data %>% filter(measure == "TotalScore" & group == "CBT") %>% select(ci.ub) %>% as.numeric() %>% round(2)`) 
+and PAT 
+(*d* = `r es.data %>% filter(measure == "TotalScore" & group == "PDT") %>% select(yi) %>% as.numeric() %>% round(2)`, 95% CI = 
+`r es.data %>% filter(measure == "TotalScore" & group == "PDT") %>% select(ci.lb) %>% as.numeric() %>% round(2)`-
+`r es.data %>% filter(measure == "TotalScore" & group == "PDT") %>% select(ci.ub) %>% as.numeric() %>% round(2)`), the CAT sample was much smaller.
+
+The majority of the studies representing the meta-analytic benchmark (total sample = `r format(Benchmarks %>% filter(group == "OQ Studies") %>% select(ni) %>% as.numeric(), big.mark = ",")`) came from the USA (n = 8), with the remaining studies coming from Switzerland (n = 2), Norway (n = 1) and Israel (n = 1). Only two studies were larger in sample size than the SPS effectiveness/recovery sample [@Baldwin2009; @Goldberg2016]. Details of outcomes studies included in the OQ-45 benchmark are reported in Appendix H.
+The aggregated OQ-45 pre-post therapy effect-size was `r as.character(effectsize::interpret_d(Benchmarks %>% filter(group == "OQ Studies") %>% select(yi) %>% as.numeric(), rules = "cohen1988"))` 
+(*d* = `r round(Benchmarks %>% filter(group == "OQ Studies") %>% select(yi) %>% as.numeric(), 2)`,
+*k* = 13,
+CI = `r paste(round(Benchmarks %>% filter(group == "OQ Studies") %>% select(ci.lb), 2), round(Benchmarks %>% filter(group == "OQ Studies") %>% select(ci.ub), 2), sep = "-")`
+*p* = < .001).
+Two studies were statistical outliers [@Goldberg2016; @Lunnen2008]. These studies were kept in the OQ-45 effectiveness benchmarks as preliminary sensitivity removal did not substantially alter the effect-size (*d* = 0.60, *k* = 11, 95% CI = 0.48-0.73, *p* = < .001).
+
+In comparing the SPS effect-size and CI to the meta-analytic benchmark and separate tertiary care benchmark, it is shown that 
+both benchmark effect-sizes (OQ-studies and tertiary care) exceeded the SPS CI region, indicating inferior effectiveness for the current study outcomes.
+CIs for each specific SPS treatment modality overlapped with the SPS pooled effect-size indicating that no specific treatment was superior.
+SPS effect-sizes (total and subscales) and the selected tertiary and OQ-45 benchmarks are shown in Figure 1. 
+
+
+
+
+\begin{figure}[H]
+      \vspace*{-10mm}
+        \centering
+        \includegraphics[width=1\linewidth, height = 29cm]{images/forestplot2.pdf}
+        \caption{Forest plot of pre-post therapy effect sizes for the current study sample and selected effectiveness benchmarks. The square boxes depict individual Cohen’s d effect sizes and error bars display 95 percent confidence intervals. The red horizontal line represents the Cohen's d effect-size for the pooled SPS sample.}
+\end{figure}
+
+
+
+## Recovery
+
+Recovery rates for SPS overall and each treatment are shown in Table 2 and are visualised in a Jacobson plot (Figure 2). The plot shows a dense congestion of people within the ‘no change’ and ‘improved’ regions.
+There were 
+`r Wide.Data %>% filter(RCSI == "NA") %>% count() %>% as.numeric()` (`r round(Wide.Data %>% filter(RCSI == "NA") %>% count() %>% as.numeric()/nrow(Wide.Data)*100,2)`%) patients who fell within the non-clinical range at baseline and so these could not reach all criteria required for clinical recovery.
+In terms of post treatment status, `r RecoveryTable.data[3,3]` patients recovered,
+`r RecoveryTable.data[3,6]` patients made a reliable improvement and
+`r RecoveryTable.data[3,5]` patients made a reliable deterioration.
+There were only small discrepancies shown in recovery rates between modalities. In comparison to the pooled benchmark, less patients recovered and more had no reliable change. Rates of recovery and no-change were very similar between SPS and the community mental health centre benchmark. By comparison SPS showed less deterioration and greater rates of reliable improvement. There was a significant difference in response rates between SPS and the overall recovery benchmarks (*p* = .001), but no difference to the more closely related community mental health centre benchmarks (*p* = 0.098).
+
+```{r RecoveryPlots, echo = F, message = F, warning = F,include=T, fig.cap ="Jacobson plot to show the rates of patient response. Points to the right of the vertical dashed line represent patients who started treatment as clinically distressed. Points beneath the horizontal dashed line represent patients who finished treatment in the non-clinically distressed range.", fig.show="hold", out.width="80%", fig.height=5, fig.align="center"}
+RecoveryPlot
+```
+```{r RecoveryTables, echo = F, include=T}
+RecoveryTable
+```
+
+### Dose Response
+Figure 3 shows a bar plot for treatment response broken down by number of sessions. Patients with very short treatment durations (i.e. less than 10) were highly unlikely to have responded to treatment. Response generally increases in-line with sessions until approximately 40 sessions. It is important to note that this graph does not determine at which point within treatment patients responded. A similar trend was shown for statistical change (Table 3), Cohen's *d* pre-post effect-sizes were particularly small for patients receiving less than 10 sessions, increases with number of sessions, until the point of approximately 40 sessions.
+
+```{r DoseResponsePlot, echo = F, message = F, warning = F,include=T, fig.cap ="Rates of response to tertiary care therapy, based on number of sessions received. Response here is the sum of patients who showed reliable improvement. Bars show rate of improvement by number of sessions received. The red line/text denotes the cumulative number of patients who had improved by the number of sessions received.", out.width="90%", fig.height=6, fig.align="center"}
+DoseResponsePlot
+```
+
+\newpage
+
+```{r DoseResponse, echo = F, include=T}
+Doseresponsetable3
+```
+
+
+
+\newpage
+
+## Growth Curves
+
+There were 
+`r mlm.wide %>% nrow()`
+patients with at least three OQ-45 measures and which could be used in the growth-curve analysis. Fixed effects and goodness-of-fit statistics for unconditional and conditional models are shown in Table 4. Growth curves for unconditional models are shown in Figure 4 while conditional model growth curves are in Appendix I.
+
+For the OQ-45 total score final unconditional model there was a significant main effect for intercept (initial score,
+  $\gamma$ = `r round(as.numeric(mods$OQ$rs.cub$coefficients[1]), 2)`,
+  F = `r as.numeric(mods$OQ$rs.cub$dims[1])`,
+  *p* = `r format.pval(anova(mods$OQ$rs.cub)[1,3], eps = .001, digits = 3)`).
+For sessions, the significant time trends included
+linear
+  ($\gamma$ = `r round(as.numeric(mods$OQ$rs.cub$coefficients[2]), 2)`,
+  F = `r round(anova(mods$OQ$rs.cub)[2,2],2)`, *p* = 
+  `r format.pval(anova(mods$OQ$rs.cub)[2,3], eps = .001, digits = 3)`),
+quadratic
+  ($\gamma$ = `r format(mods$OQ$rs.cub$coefficients[3], digits = 1)`,
+  F = `r round(anova(mods$OQ$rs.cub)[3,2],2)`, *p* = 
+  `r format.pval(anova(mods$OQ$rs.cub)[3,3], eps = .001, digits = 3)`),
+and cubic
+  ($\gamma$ = `r format(round(as.numeric(mods$OQ$rs.cub$coefficients[4]), 5), nsmall=5)`,
+  F = `r round(anova(mods$OQ$rs.cub)[4,2],2)`, *p* = 
+  `r format.pval(anova(mods$OQ$rs.cub)[4,3], eps = .001, digits = 3)`),
+In other words, OQ-45 total score dropped by `r abs(round(as.numeric(mods$OQ$rs.cub$coefficients[2]), 2))` per session, however this was gradually reversed by the curvi-linear terms. Examination of the growth curve for total score (Figure 4) reveals that improvements begin to dissipate at approximately the 150th session.
+In the conditional model (including treatment modality), there was no significant main effect for
+treatment modality
+  ($\gamma$ = `r round(as.numeric(mods$OQ$cm$coefficients[5]), 2)`,
+  F = `r round(anova(mods$OQ$cm)[5,2],2)`, *p* = 0.149),
+or
+treatment:sessions interaction
+  ($\gamma$ = `r round(as.numeric(mods$OQ$cm$coefficients[6]), 2)`,
+  F = `r round(anova(mods$OQ$cm)[6,2],2)`, *p* = 
+  `r format.pval(anova(mods$OQ$cm)[6,3], eps = .001, digits = 3)`) however the conditional model did provide a significantly improved model fit ($\chi$^2^ = `r round(mods$OQ$gf.full$L.Ratio[2], 2)`,
+ *p* = `r format(format.pval(mods$OQ$gf.full[2,9], eps = .001, digits = 2), nsmall = 3)`).
+
+As shown in Table 4, the fixed effect for therapy modality (represented by 'Analytic') and the modality:session interaction (not displayed) was not significant for any of the OQ-45 sub-scales.
+Conditional models for symptom distress and social role demonstrated significant improved model fit when compared to unconditional models however this was not the case for inter-personal. Log-linear (social role) and cubic (symptom distress, interpersonal) growth curves are illustrated in growth curve plots in Figure 4.
+
+\begin{landscape}
+
+```{r opttable, echo = FALSE, include=T}
+Optimal.table
+```
+
+\end{landscape}
+
+
+```{r growthcurve, echo = FALSE, include=T, fig.height=7.5, fig.cap="Growth curves for optimal unconditional models. Blue lines represent growth curve trajectories. Grey shaded regions represent 95% confidence interval regions. Trends line types represent cubic for OQ-45 total score, interpersonal and symptom distrss. Social role is represented by a log-linear trend."}
+growplots
+```
+
+
